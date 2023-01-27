@@ -3,23 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Become a Movie Geek</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
 <body>
     
   <header class="section">
-   <section class="hero is-primary">
-      <div class="hero-body">
+   <!-- <section class="hero is-primary"> -->
+   <section class="container is-fluid">
+      <!-- <div class="hero-body"> -->
+        <div class="notification is-primary">
       <p class="title">
-        Movie geek
+        Movie Geek
       </p>
+        </div>
+        <hr/>
+   </section>
+      <section class="container is-fluid">
+        <!-- <div class="hero-body"> -->
+          <div class="notification is-primary">
       <p class="subtitle">
         In this website you can find out more about your favorite movie!
       </p>
       <p class="subtitle">
-        Search for your movie by title below
+        Search for your movie by title below  <span>&#10549;</span>	
       </p>
       </div>
     </section>
@@ -29,7 +37,7 @@
     <hr/>
     <!-- movie title search element -->
     <div class="control py-4 "> Enter a movie name: <input class="input is-focused is-rounded is-inline" id="movie-name" type="text" placeholder=" "> 
-        <button class="button is-inline is-rounded search-btn">Search</button>
+        <button class="button is-inline is-rounded search-btn">Geek</button>
     </div>
     <!-- recent search element -->
     <div class="py-4" >
@@ -44,7 +52,7 @@
     <hr/>
     <!--movie data found with wikimedia API-->
     <div class="columns">
-      <div class="column">
+      <div class="column is-one-third notification is-info">
         <!--display director(s) element-->
         <div class="control py-4 ">  Director(s):   <a class="button" id="Director"></a>
         </div>
@@ -58,7 +66,10 @@
         <div class="control py-4 ">  Genre:   <a class="button" id="Genre"></a>
         </div>
       </div>
-      <div class="column" id="PersonName">
+      <!-- creates space between columns -->
+      <div class="column is-one-quarter notification is-white"></div>
+      <!-- diplay selected person name and bio element -->
+      <div class="column is-one-third notification is-dark" id="PersonName">
         Placeholder for person name and bio
         <div class="control py-4 "><a class="button" id="Bio">Anchor placeholder - Bio</a>
         </div>

@@ -73,6 +73,13 @@ $(".search-btn").on("click", function(event){
     // displayWikipedia();
 });
 
+// "enter" key executes the movie search field as well
+$("#movie-name").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $(".search-btn").click();
+    }
+});
+
 function callOmdb(queryString){
 let url = 'https://www.omdbapi.com/?t=' + queryString + '=&apikey=b05ca673';
 
