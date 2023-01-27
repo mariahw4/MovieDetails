@@ -1,7 +1,6 @@
  // Global variables
  var movieList = [];
  var movieName;
- 
 
 // local storage functions
 initMovieList();
@@ -69,5 +68,32 @@ $(".search-btn").on("click", function(event){
     storeCurrentMovie();
     storeMovieArray();
     renderMovies();
+    $('#PosterContainer').empty();
+    callOmdb(movieName);
     // displayWikipedia();
 });
+
+function callOmdb(queryString){
+let url = 'https://www.omdbapi.com/?t=' + queryString + '=&apikey=b05ca673';
+
+fetch(url)
+.then(function (response){
+  return(response.json());
+}).then(function(data){
+    
+    console.log('data :>> ', data);
+    let mainActor = data.Actors.split(",")[0];
+    $('#Movie-Title').text(data.Title);
+    $('#Director').text(data.Director);
+    $('#Main-Actor').text(mainActor);
+    $('#Year').text(data.Year);
+    $('#Genre').text(data.Genre);
+
+    var posterString = '<img src="' + data.Poster +'"' + ' alt="Poster" width="auto" height="180px"' + '/>';
+    $('#PosterContainer').append(posterString);
+            
+}); 
+
+}
+
+$('#PosterContainer').empty();
