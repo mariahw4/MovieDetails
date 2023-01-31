@@ -2,6 +2,26 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.instructions{
+    display: flex;
+    align-items: center;
+}
+
+.instructions-text{
+    margin-right: 10px;
+}
+
+.title{
+    text-align: center;
+}
+.movie-image{
+    width: 200px;
+}
+
+.button{
+    margin-left: 10px;
+}
+
 #PosterContainer {
     margin: 30px auto;
     margin-bottom: 100px;
@@ -9,4 +29,20 @@ body {
 
 #Movie-Title {
     text-align: center;
+}
+
+.gap{
+    font-size: 8px;
+    line-height: 8px;
+}
+
+header{
+    margin: 10px 80px 10px 80px
+}
+
+.form{
+    width: 750px;
+    height: 150px;
+    padding: 0px;
+    
 }
