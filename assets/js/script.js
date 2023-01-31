@@ -72,9 +72,16 @@ $(".search-btn").on("click", function(event){
         
 });
 
+// "enter" key executes the movie search field as well
+$("#movie-name").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $(".search-btn").click();
+    }
+});
+
 function getMovieDetails(movie){
     let url = 'https://www.omdbapi.com/?t=' + movie + '=&apikey=b05ca673';
-
+    
     fetch(url)
     .then(function (response){
     return(response.json());
@@ -139,14 +146,11 @@ function getActorBio(actorId){
         const lim = actorBioRaw.search("\n");
         var actorBio = actorBioRaw.substring(0,lim);
         var actorName = data.name;
-        var actorRealName = data.realName;
-
         $('#PersonName').text(actorName);
         $('#PersonBio').text(actorBio);
 
     }).catch(err => console.error(err));
 
 }
-
 
 $('#PosterContainer').empty();
