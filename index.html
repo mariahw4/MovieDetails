@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Become a Movie Geek</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css"
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
@@ -19,7 +19,8 @@
         Movie Geek
       </p>
         </div>
-        <hr/>
+        <div class="gap"></div>
+        <!-- <hr/> -->
    </section>
       <section class="container is-fluid">
         <!-- <div class="hero-body"> -->
@@ -35,22 +36,28 @@
   </header>
 
   <section class="container">
-    <hr/>
+  <div class="form">
     <!-- movie title search element -->
-    <div class="control py-4 is-family-sans-serif is-size-5"> Enter a movie name: <input class="input is-focused is-rounded is-inline" id="movie-name" type="text" placeholder=" "> 
-        <button class="button is-inline is-rounded search-btn">Geek</button>
+    <div class="is-family-sans-serif is-size-5 instructions">
+      <span class="instructions-text" >Enter a movie name:  </span> 
+      <input class="input is-focused is-rounded is-inline" id="movie-name" type="text" placeholder=" "> 
+        <button class="button my-3 is-rounded search-btn tag is-primary is-large">Geek</button>
     </div>
+  
     <!-- recent search element -->
     <div class="py-4 is-family-sans-serif" >
-        <p class="is-inline">Recent Searches:</p><span class="is-inline" id="list-of-movies"> </span>
+        <p class="is-inline">Recent Searches:</p><span class="is-inline" id="list-of-movies"></span>
     </div>
+  </div>
+</section>
+
     <!-- movie image element still need to figure out how to resize and center-->
-    <div class="">
+    <div class="movie-title">
         <h2 class="movie-name" id="Movie-Title"></h2>
-        <figure class="image is-128x128  movie-image" id="PosterContainer">
-          </figure>
+        <figure class="image movie-image" id="PosterContainer" ></figure>
      </div>
-    <hr/>
+    
+    <section class="container">
     <!--movie data found with wikimedia API-->
     <div class="columns">
       <div class="column is-one-third notification is-info">
