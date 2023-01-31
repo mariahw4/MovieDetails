@@ -35,7 +35,7 @@ function initMovieData() {
 
     if (storedMovieData !== null) {
         movieName = storedMovieData;
-        getMovieDetails();
+        getMovieDetails(movieName);
     }
 }
 

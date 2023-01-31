@@ -2,17 +2,17 @@
 Group project to build an app using 2 API calls that incorporates user input and local storage.
 
 Group Members:
-Jorge Gomez
-Maximillian Royal-Eisenberg
-Mariah Wear
-Tri Chau
+- Jorge Gomez
+- Maximillian Royal-Eisenberg
+- Mariah Wear
+- Tri Chau
 
 
 ## Mock-Up
 
 The following image shows the web application's appearance and functionality:
 
-![The movie geek app includes a search option, a list of recent searches, data about the movie pulled from OMDB and a secondary API call to Wikipedia for a relevent article. ](./assets/images/weather-dashboard-screenshot.png)
+![The Movie Geek app includes a search option, a list of recent searches, data about the movie pulled from OMDB and a secondary API call to IMDB for a relevent biographic information abuot the main actor.](./assets/images/weather-dashboard-screenshot.png)
 
 
 ## Deployed Project
@@ -21,9 +21,9 @@ git hub link
 ## User Story
 
 ```
-AS A online browser
-I WANT a single platform where I can search a movie and see director, key actor, genre, year, movie poster as well as a bio for the actor
-SO THAT I can see key information about the film clearly presented and a link to Wikipedia for more info on indicated persons. 
+AS AN online user
+I WANT a single platform where I can search a movie and see director, key actor, genre, year, movie poster as well as a bio for the main actor/actress
+SO THAT I can see key information about the film clearly presented of the main actor/actress. 
 ```
 
 ## Acceptance Criteria 
