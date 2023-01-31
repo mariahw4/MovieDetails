@@ -5,7 +5,7 @@ var mainActor;
 
 // local storage functions
 initMovieList();
-initWikipedia();
+initMovieData();
 
 function renderMovies(){
     $("#list-of-movies").empty();
@@ -30,12 +30,12 @@ function initMovieList() {
     renderMovies();
     }
 // This function pull the current movie into local storage to display the current info on reload
-function initWikipedia() {
-    var storedWikipedia = JSON.parse(localStorage.getItem("wikipedia"));
+function initMovieData() {
+    var storedMovieData = JSON.parse(localStorage.getItem("currentMovie"));
 
-    if (storedWikipedia !== null) {
-        movieName = storedWikipedia;
-        displayWikipedia();
+    if (storedMovieData !== null) {
+        movieName = storedMovieData;
+        getMovieDetails();
     }
 }
 
@@ -45,8 +45,8 @@ function storeMovieArray() {
     }
 
 // This function saves the currently displayed movie to local storage
-function storeCurrentMovie() {
-    localStorage.setItem("currentMovie", JSON.stringify(movieName));
+function storeCurrentMovie(searchedMovie) {
+    localStorage.setItem("currentMovie", JSON.stringify(searchedMovie));
 }
 
 // Click event handler for movie search button
@@ -64,7 +64,7 @@ $(".search-btn").on("click", function(event){
     }else{
     movieList.push(userMovieName);
     }
-    storeCurrentMovie();
+    storeCurrentMovie(userMovieName);
     storeMovieArray();
     renderMovies();
     $('#PosterContainer').empty();
@@ -154,3 +154,12 @@ function getActorBio(actorId){
 }
 
 $('#PosterContainer').empty();
+
+function historyDisplayMovies(){
+    searchedMovie = $(this).attr("data-name");
+    $('#PosterContainer').empty();
+    getMovieDetails(searchedMovie);
+    console.log(searchedMovie);    
+}
+
+$(document).on("click", ".movie", historyDisplayMovies);
