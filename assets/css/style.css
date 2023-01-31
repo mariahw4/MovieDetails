@@ -2,6 +2,12 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+.hero-banner{
+    margin: 10px 80px 10px 80px;
+    padding: 0.2rem 1rem;
+
+}
+
 .instructions{
     display: flex;
     align-items: center;
@@ -13,6 +19,7 @@ body {
 
 .title{
     text-align: center;
+
 }
 .movie-image{
     width: 200px;
