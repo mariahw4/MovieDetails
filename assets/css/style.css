@@ -19,7 +19,7 @@ body {
 
 .title{
     text-align: center;
-
+    
 }
 .movie-image{
     width: 200px;
@@ -29,12 +29,21 @@ body {
     margin-left: 10px;
 }
 
+#PersonFace {
+    margin: 30px auto;
+    margin-bottom: 100px;
+}
 #PosterContainer {
     margin: 30px auto;
     margin-bottom: 100px;
 }
 
+
 #Movie-Title {
+    text-align: center;
+}
+
+#PersonCharacter {
     text-align: center;
 }
 
