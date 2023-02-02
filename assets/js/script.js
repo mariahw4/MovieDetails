@@ -68,6 +68,7 @@ $(".search-btn").on("click", function(event){
     storeMovieArray();
     renderMovies();
     $('#PosterContainer').empty();
+    $('#PersonFace').empty();
     getMovieDetails(userMovieName);
         
 });
@@ -130,7 +131,7 @@ function getActorId(movie){
         // added actor character name to center column
         var actorCharRaw = data.results[0].principals[0].roles[0].character;
         const startC = actorCharRaw.search("nm");
-        const endC = actorCharRaw.length - 1;
+        const endC = actorCharRaw.length;
         var actorChar = actorCharRaw.substring(startC,endC);
         $('#PersonCharacter').text(actorChar);
     });
@@ -169,10 +170,13 @@ function getActorBio(actorId){
 }
 
 $('#PosterContainer').empty();
+$('#PersonFace').empty();
+
 
 function historyDisplayMovies(){
     searchedMovie = $(this).attr("data-name");
     $('#PosterContainer').empty();
+    $('#PersonFace').empty();
     getMovieDetails(searchedMovie);
     console.log(searchedMovie);    
 }
