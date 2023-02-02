@@ -120,11 +120,19 @@ function getActorId(movie){
     }).then(function(data){
         console.log("callIMDB for movie", data); 
         console.log('id :>> ', data.results[0].principals[0].id);  
+        console.log('char id:>>', data.results[0].principals[0].roles[0].character);
         var actorIdRaw = data.results[0].principals[0].id;
         const start = actorIdRaw.search("nm");
         const end = actorIdRaw.length - 1;
         var actorId = actorIdRaw.substring(start,end);
         getActorBio(actorId)
+        
+        // added actor character name to center column
+        var actorCharRaw = data.results[0].principals[0].roles[0].character;
+        const startC = actorCharRaw.search("nm");
+        const endC = actorCharRaw.length - 1;
+        var actorChar = actorCharRaw.substring(startC,endC);
+        $('#PersonCharacter').text(actorChar);
     });
 }
 
@@ -142,12 +150,19 @@ function getActorBio(actorId){
     .then(function(response){
         return(response.json());
     }).then(function(data){
+        // added actor face img to center column
+        var actorFace = '<img src="' + data.image.url +'"' + ' alt="Image" width="auto" height="180px"' + '/>';
+        $('#PersonFace').append(actorFace);
+
+        console.log("data intended for bio", data);
+        console.log("image url ==>", data.image.url);
         var actorBioRaw = data.miniBios[0].text;
         const lim = actorBioRaw.search("\n");
         var actorBio = actorBioRaw.substring(0,lim);
         var actorName = data.name;
         $('#PersonName').text(actorName);
         $('#PersonBio').text(actorBio);
+        
 
     }).catch(err => console.error(err));
 
