@@ -8,6 +8,10 @@ body {
 
 }
 
+.notification {
+    height: 400px;
+    overflow: scroll;
+}
 .instructions{
     display: flex;
     align-items: center;
