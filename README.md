@@ -12,7 +12,11 @@ Group Members:
 
 The following image shows the web application's appearance and functionality:
 
-![The Movie Geek app includes a search option, a list of recent searches, data about the movie pulled from OMDB and a secondary API call to IMDB for a relevent biographic information abuot the main actor.](./assets/images/screenshot.png)
+Once a query has been made:
+![The Movie Geek app includes a search option, a list of recent searches, data about the movie pulled from OMDB and a secondary API call to IMDB for a relevent biographic information abuot the main actor.](./assets/images/screenshot-active.png)
+
+Before a query has been made:
+![Screenshot](./assets/images/screenshot-waiting.png)
 
 
 ## Deployed Project

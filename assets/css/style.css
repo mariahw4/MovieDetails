@@ -33,7 +33,12 @@ body {
 .button{
     margin-left: 10px;
 }
-
+#recent-search{
+    visibility: hidden;
+}
+#data-display{
+    visibility: hidden;
+}
 #PersonFace {
     margin: 30px auto;
     margin-bottom: 100px;

@@ -10,7 +10,7 @@ initMovieData();
 function renderMovies(){
     $("#list-of-movies").empty();
     $("#movie-name").val("");
-    
+
     for (i=0; i<movieList.length; i++){
         var a = $("<a>");
         a.addClass("button is-inline px-4 m-4 movie");
@@ -25,8 +25,9 @@ function initMovieList() {
 
         if (storedMovies !== null) {
         movieList = storedMovies;
+        $("#recent-search").attr("style", "visibility: visible");
+        $("#data-display").attr("style", "visibility: visible");
     }
-    
     renderMovies();
     }
 // This function pull the current movie into local storage to display the current info on reload
@@ -70,6 +71,9 @@ $(".search-btn").on("click", function(event){
     $('#PosterContainer').empty();
     $('#PersonFace').empty();
     getMovieDetails(userMovieName);
+    $("#recent-search").attr("style", "visibility: visible");
+    $("#data-display").attr("style", "visibility: visible");
+
         
 });
 
@@ -179,6 +183,8 @@ function historyDisplayMovies(){
     $('#PersonFace').empty();
     getMovieDetails(searchedMovie);
     console.log(searchedMovie);    
+    $("#recent-search").attr("style", "visibility: visible");
+    $("#data-display").attr("style", "visibility: visible");
 }
 
 $(document).on("click", ".movie", historyDisplayMovies);
