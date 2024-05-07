@@ -21,7 +21,7 @@ Before a query has been made:
 
 ## Deployed Project
 
-https://jogomez.github.io/MovieDetails/
+https://mariahw4.github.io/MovieDetails/
 
 ## User Story
 
