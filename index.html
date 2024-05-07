@@ -1,108 +1,110 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Become a Movie Geek</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Become a Movie Geek</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    
+
   <header class="section hero-banner">
-   <!-- <section class="hero is-primary"> -->
-   <section class="container is-fluid">
+    <!-- <section class="hero is-primary"> -->
+    <section class="container is-fluid">
       <!-- <div class="hero-body"> -->
-        <div class="notification is-primary">
-      <p class="title">
-        Movie Geek
-      </p>
-        </div>
-        <div class="gap"></div>
-        <!-- <hr/> -->
-   </section>
-      <section class="container is-fluid">
-        <!-- <div class="hero-body"> -->
-          <div class="notification is-primary">
-      <p class="subtitle">
-        In this website you can find out more about your favorite movie!
-      </p>
-      <p class="subtitle">
-        Search for your movie by title below  <span>&#10549;</span>	
-      </p>
+      <div class="notification is-primary">
+        <p class="title">
+          Movie Geek
+        </p>
+      </div>
+      <div class="gap"></div>
+      <!-- <hr/> -->
+    </section>
+    <section class="container is-fluid">
+      <!-- <div class="hero-body"> -->
+      <div class="notification is-primary">
+        <p class="subtitle">
+          In this website you can find out more about your favorite movie!
+        </p>
+        <p class="subtitle">
+          Search for your movie by title below <span>&#10549;</span>
+        </p>
       </div>
     </section>
   </header>
 
   <section class="container">
-  <div class="form">
-    <!-- movie title search element -->
-    <div class="is-family-sans-serif is-size-5 instructions">
-      <span class="instructions-text" >Enter a movie name:  </span> 
-      <input class="input is-focused is-rounded is-inline" id="movie-name" type="text" placeholder=" "> 
+    <div class="form">
+      <!-- movie title search element -->
+      <div class="is-family-sans-serif is-size-5 instructions">
+        <span class="instructions-text">Enter a movie name: </span>
+        <input class="input is-focused is-rounded is-inline" id="movie-name" type="text" placeholder=" ">
         <button class="button my-3 is-rounded search-btn tag is-primary is-large">Geek</button>
-    </div>
-  
-    <!-- recent search element -->
-    <div class="py-4 is-family-sans-serif" >
-        <p class="is-inline" id="recent-search">Recent Searches:</p><span class="is-inline" id="list-of-movies"></span>
-    </div>
-  </div>
-</section>
+      </div>
 
-    <!-- movie image element still need to figure out how to resize and center-->
-    <div class="movie-title">
-        <h2 class="movie-name" id="Movie-Title"></h2>
-        <figure class="image movie-image" id="PosterContainer" ></figure>
-     </div>
-    
-    <section class="container" id="data-display">
+      <!-- recent search element -->
+      <div class="py-4 is-family-sans-serif">
+        <p class="is-inline" id="recent-search">Recent Searches:</p><span class="is-inline" id="list-of-movies"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- movie image element still need to figure out how to resize and center-->
+  <div class="movie-title">
+    <h2 class="movie-name" id="Movie-Title"></h2>
+    <figure class="image movie-image" id="PosterContainer"></figure>
+  </div>
+
+  <section class="container" id="data-display">
     <!--movie data found with wikimedia API-->
     <div class="columns">
       <div class="column is-one-third notification is-info">
         <!--display director(s) element-->
-        <div class="control py-4 ">  Director(s):   <a class="button" id="Director"></a>
+        <div class="control py-4 "> Director(s): <a class="button" id="Director"></a>
         </div>
         <!--display main actor/actress element-->
-        <div class="control py-4 ">  Main Actor/Actress:   <a class="button" id="Main-Actor"></a> 
+        <div class="control py-4 "> Main Actor/Actress: <a class="button" id="Main-Actor"></a>
         </div>
         <!--display movie year element-->
-        <div class="control py-4 ">  Year:   <a class="button" id="Year"></a>
+        <div class="control py-4 "> Year: <a class="button" id="Year"></a>
         </div>
         <!--display movie genre element-->
-        <div class="control py-4 ">  Genre:   <a class="button" id="Genre"></a>
+        <div class="control py-4 "> Genre: <a class="button" id="Genre"></a>
         </div>
       </div>
       <!-- display person mugshot -->
-      <div class="column is-one-third notification is-white" >
-        <figure class="image is-128x128  movie-image" id="PersonFace">
+      <div class="column is-one-third notification is-white">
+        <figure class="image is-128x128  movie-image" id="actorPic">
         </figure>
         <p class="subtitle control py-4" id="PersonCharacter"></p>
       </div>
       <!-- diplay selected person name and bio element -->
-      <div class="column is-one-third notification is-dark" id="notification-column"> 
-        <p class="title" id="PersonName"></p>
-        <p class="subtitle" id="PersonBio"></p>
+      <div class="column is-one-third notification is-dark" id="notification-column">
+        <p class="title">The Plot: </p>
+        <p class="subtitle" id="moviePlot"></p>
+        <p class="title">Awards: </p>
+        <p class="subtitle" id="movieAwards"></p>
       </div>
-      
+
 
     </div>
-  </section> 
+  </section>
 
   <footer class="footer">
     <div class="content has-text-centered">
       <p>Webapp designed by the <strong>Rushing hackers</strong> at the University of California, Berkeley</p>
     </div>
- 
-    <script
-      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-      crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="./assets/js/script.js"></script>
-   </footer>
+  </footer>
 
 </body>
+
 </html>
