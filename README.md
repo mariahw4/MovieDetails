@@ -27,7 +27,7 @@ https://mariahw4.github.io/MovieDetails/
 
 ```
 AS AN online user
-I WANT a single platform where I can search a movie and see director, key actor, genre, year, movie poster as well as a bio and image for the main actor/actress
+I WANT a single platform where I can search a movie and see director, key actor, genre, year, movie poster as well as an image for the main actor/actress. In the third column I see the plot and any awards the movie has earned. 
 THEN I can see key information about the film clearly presented alongside the main actor/actress. 
 ```
 
